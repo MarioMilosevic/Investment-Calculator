@@ -1,8 +1,10 @@
+import Header from "./components/Header"
+import InputFields from "./components/InputFields"
 function App() {
-
   return (
     <>
-      <div>Fields of Verdun</div>
+      <Header/>
+      <InputFields/>
     </>
   )
 }
