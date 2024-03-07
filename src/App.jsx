@@ -14,6 +14,9 @@ function App() {
     expectedReturn,
     duration,
   };
+
+  const isValid = userInput.duration >= 1 ? true : false;
+
   return (
     <>
       <Header />
@@ -27,7 +30,8 @@ function App() {
         duration={duration}
         durationHandler={(e) => setDuration(+e.target.value)}
       />
-      <Results userInput={userInput} />
+      {isValid && <Results userInput={userInput} />}
+      {!isValid && <p className="center">Duration must be greater than 0</p> }
     </>
   );
 }
