@@ -1,47 +1,49 @@
-import { useState } from "react";
-
-const InputFields = () => {
-  const [initialInvestment, setInitialInvestment] = useState(1000);
-  const [annualInvestment, setAnnualInvestment] = useState(100);
-  const [expectedReturn, setExpectedReturn] = useState(10);
-  const [duration, setDuration] = useState(5);
-
+const InputFields = ({
+  initialInvestment,
+  initialInvestmentHandler,
+  annualInvestment,
+  annualInvestmentHandler,
+  expectedReturn,
+  expectedReturnHandler,
+  duration,
+  durationHandler,
+}) => {
   return (
     <section id="user-input">
       <div className="input-group">
         <p>
-          <label htmlFor="">Initial Investment</label>
+          <label>Initial Investment</label>
           <input
             type="number"
             value={initialInvestment}
-            onChange={(e) => setInitialInvestment(e.target.value)}
+            onChange={initialInvestmentHandler}
             required
           />
         </p>
         <p>
-          <label htmlFor="">Annual Investment</label>
+          <label>Annual Investment</label>
           <input
             type="number"
             value={annualInvestment}
-            onChange={(e) => setAnnualInvestment(e.target.value)}
+            onChange={annualInvestmentHandler}
             required
           />
         </p>
         <p>
-          <label htmlFor="">Expected Return</label>
+          <label>Expected Return</label>
           <input
             type="number"
             value={expectedReturn}
-            onChange={(e) => setExpectedReturn(e.target.value)}
+            onChange={expectedReturnHandler}
             required
           />
         </p>
         <p>
-          <label htmlFor="">Duration</label>
+          <label>Duration</label>
           <input
             type="number"
             value={duration}
-            onChange={(e) => setDuration(e.target.value)}
+            onChange={durationHandler}
             required
           />
         </p>
