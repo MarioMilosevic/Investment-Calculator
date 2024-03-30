@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const InputFields = ({
   initialInvestment,
   initialInvestmentHandler,
@@ -50,6 +52,17 @@ const InputFields = ({
       </div>
     </section>
   );
+};
+
+InputFields.propTypes = {
+  initialInvestment: PropTypes.number.isRequired,
+  initialInvestmentHandler: PropTypes.func.isRequired,
+  annualInvestment: PropTypes.number.isRequired,
+  annualInvestmentHandler: PropTypes.func.isRequired,
+  expectedReturn: PropTypes.number.isRequired,
+  expectedReturnHandler: PropTypes.func.isRequired,
+  duration: PropTypes.number.isRequired,
+  durationHandler: PropTypes.func.isRequired,
 };
 
 export default InputFields;
